@@ -14,7 +14,7 @@ var Db *sql.DB
 
 func ConnectDB() {
 
-	_ = godotenv.Load(".env")
+	_ = godotenv.Load("config/.env")
 
 	host := os.Getenv("PGHOST")
 	port := os.Getenv("PGPORT")
@@ -46,5 +46,5 @@ func ConnectDB() {
 		log.Fatal("Database tidak merespon:", err)
 	}
 
-	fmt.Println(" Success Connect DB")
+	fmt.Println("Success Connect DB")
 }
